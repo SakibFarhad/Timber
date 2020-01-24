@@ -1,17 +1,17 @@
-version: '3.1'
+version: '3.7'
 services: 
     mqtt:
         image: eclipse-mosquitto
         ports:
-            - 1883:1883
+            - 1883
         links: 
             - app
         
-    mobgodb:
+    mongodb:
         image: mongo
         restart: always
         ports: 
-            - 27017:27017
+            - 27017
         environment:
             MONGO_INITDB_ROOT_USERNAME: germany
             MONGO_INITDB_ROOT_PASSWORD: germany
@@ -21,9 +21,11 @@ services:
     app:
         build: .
         
+        
 networks:
     default:
-        driver: bridge
+        external: 
+            name: timber
     
 
 

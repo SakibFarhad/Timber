@@ -9,11 +9,13 @@ RUN apt-get update && \
                     telnet && \
     apt-get clean
 
-RUN /usr/bin/python3 -m pip install -U paho-mqtt pymongo
 
 WORKDIR /opt
 
 ADD ./app /opt/app/
 ADD ./glue-app /opt/glue-app/
+ADD ./requirements.txt /opt/
+
+RUN /usr/bin/python3 -m pip install -r /opt/requirements.txt
 
 ENTRYPOINT [ "/bin/bash", "-c", "tail -f /dev/null" ] 

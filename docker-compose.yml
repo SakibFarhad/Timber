@@ -15,6 +15,7 @@ services:
         environment:
             MONGO_INITDB_ROOT_USERNAME: germany
             MONGO_INITDB_ROOT_PASSWORD: germany
+            MONGO_INITDB_DATABASE: primedb
         links: 
             - app
         

@@ -18,4 +18,4 @@ ADD ./requirements.txt /opt/
 
 RUN /usr/bin/python3 -m pip install -r /opt/requirements.txt
 
-ENTRYPOINT [ "/bin/bash", "-c", "tail -f /dev/null" ] 
+ENTRYPOINT [ "/usr/bin/python3", "/opt/glue-app/mqtt.py" ] 

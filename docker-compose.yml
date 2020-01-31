@@ -11,8 +11,8 @@ services:
         ports:
             - 27017
         environment:
-            MONGO_INITDB_ROOT_USERNAME: germany
-            MONGO_INITDB_ROOT_PASSWORD: germany
+            MONGO_INITDB_ROOT_USERNAME: user
+            MONGO_INITDB_ROOT_PASSWORD: password
             MONGO_INITDB_DATABASE: primedb
         links:
             - app
@@ -24,8 +24,8 @@ services:
         ports:
             - 85:8081
         environment:
-            ME_CONFIG_MONGODB_ADMINUSERNAME: germany
-            ME_CONFIG_MONGODB_ADMINPASSWORD: germany
+            ME_CONFIG_MONGODB_ADMINUSERNAME: user
+            ME_CONFIG_MONGODB_ADMINPASSWORD: password
             ME_CONFIG_MONGODB_SERVER: mongodb_container
         container_name: mongo_express_container
 
@@ -35,7 +35,3 @@ services:
             - mqtt
         container_name: app_container
         
-            #networks:
-        #default:
-        #external:
-        #    name: timber

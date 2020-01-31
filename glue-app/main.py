@@ -24,7 +24,7 @@ def on_message(client, userdata, msg):
     
 
     print ('Connecting to mongodb...')
-    myclient = pymongo.MongoClient("mongodb://germany:germany@mongodb_container:27017/")
+    myclient = pymongo.MongoClient("mongodb://user:password@mongodb_container:27017/")
     mydb = myclient["primedb"]
     mycol = mydb["primecollection"]
     print ('Inserting Data..')
